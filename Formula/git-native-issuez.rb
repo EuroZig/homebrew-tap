@@ -8,7 +8,7 @@ class GitNativeIssuez < Formula
     strategy :github_latest
   end
 
-  depends_on "git"
+  depends_on macos: :ventura
 
   on_macos do
     on_arm do
@@ -22,6 +22,8 @@ class GitNativeIssuez < Formula
   end
 
   on_linux do
+    depends_on "git"
+
     on_arm do
       url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.1.0/git-native-issuez-0.1.0-full-aarch64-linux.tar.gz"
       sha256 "c3686beae5bf12620d01fa5ae4d4449f00a83c0e2f975505dc7d5d11736bcd46"
@@ -35,9 +37,19 @@ class GitNativeIssuez < Formula
   def install
     bin.install Dir["bin/*"]
     man1.install Dir["share/man/man1/*"]
-    bash_completion.install Dir["share/bash-completion/completions/*"]
     zsh_completion.install Dir["share/zsh/site-functions/*"]
-    fish_completion.install Dir["share/fish/vendor_completions.d/*"]
+
+    # Shells load completions by command name, so every git-issue-<command>
+    # entry point needs its own file. The release ships identical copies;
+    # install one and link the rest to it.
+    bash_completion.install "share/bash-completion/completions/git-issue"
+    Dir["share/bash-completion/completions/git-issue-*"].each do |f|
+      bash_completion.install_symlink bash_completion/"git-issue" => File.basename(f)
+    end
+    fish_completion.install "share/fish/vendor_completions.d/git-issue.fish"
+    Dir["share/fish/vendor_completions.d/git-issue-*.fish"].each do |f|
+      fish_completion.install_symlink fish_completion/"git-issue.fish" => File.basename(f)
+    end
     doc.install Dir["share/doc/git-native-issuez/*"]
   end
 
