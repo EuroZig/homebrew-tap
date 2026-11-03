@@ -8,9 +8,9 @@ class GitNativeIssuez < Formula
     strategy :github_latest
   end
 
-  depends_on macos: :ventura
-
   on_macos do
+    depends_on macos: :ventura
+
     on_arm do
       url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.1.0/git-native-issuez-0.1.0-full-aarch64-macos.tar.gz"
       sha256 "d9822a9eb5c8198a3a2f30e066d4ab6056d607f3b42c357eeb40b891061ffa07"
@@ -22,8 +22,6 @@ class GitNativeIssuez < Formula
   end
 
   on_linux do
-    depends_on "git"
-
     on_arm do
       url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.1.0/git-native-issuez-0.1.0-full-aarch64-linux.tar.gz"
       sha256 "c3686beae5bf12620d01fa5ae4d4449f00a83c0e2f975505dc7d5d11736bcd46"
