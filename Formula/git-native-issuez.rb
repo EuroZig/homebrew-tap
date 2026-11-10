@@ -12,23 +12,23 @@ class GitNativeIssuez < Formula
     depends_on macos: :ventura
 
     on_arm do
-      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.3.0/git-native-issuez-0.3.0-full-aarch64-macos.tar.gz"
-      sha256 "1835bcc35ef9d4f64dabb99cde818bdab8a76d5223d498140351d0e33283974a"
+      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.4.0/git-native-issuez-0.4.0-full-aarch64-macos.tar.gz"
+      sha256 "94b811295632f8e289e2eb8f669828021ded8efe0016a74da793a1121f447635"
     end
     on_intel do
-      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.3.0/git-native-issuez-0.3.0-full-x86_64-macos.tar.gz"
-      sha256 "0b623387ffbd3e640589675e3ba65b575612adbdb0be9a48d6db0658ce56b921"
+      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.4.0/git-native-issuez-0.4.0-full-x86_64-macos.tar.gz"
+      sha256 "0ef8312deb8835f08a8f172e508460ce182cc420b030556999d3cee964a4c771"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.3.0/git-native-issuez-0.3.0-full-aarch64-linux.tar.gz"
-      sha256 "df091555efb9f3eef0e244b9805f41d8050705aaf729258141a7230453e9c534"
+      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.4.0/git-native-issuez-0.4.0-full-aarch64-linux.tar.gz"
+      sha256 "8c6f152f6097bb4c201327ab7c1fdd4f4d47395c731314694bb617c378764bf2"
     end
     on_intel do
-      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.3.0/git-native-issuez-0.3.0-full-x86_64-linux.tar.gz"
-      sha256 "58aec769fc7815ecf463e01a743c496304f5279e06da378c5d284a58cca4a009"
+      url "https://github.com/EuroZig/git-native-issuez/releases/download/v0.4.0/git-native-issuez-0.4.0-full-x86_64-linux.tar.gz"
+      sha256 "b7df7c7ce8ce4ba7a350b00f091b733c2291b414d51384fbbcf49005da4ad5f5"
     end
   end
 
